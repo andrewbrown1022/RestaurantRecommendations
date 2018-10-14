@@ -11,6 +11,9 @@ html, body{
 *{
         box-sizing: border-box;
     }
+#opinionArticle{
+    display: none;
+}
 body{
         background-color: aliceblue;
         font-family: sans-serif;
@@ -33,6 +36,13 @@ header h1{
 
 
     }
+.prefListInput{
+    margin: 0%;
+    font-size: 110%;
+    margin-right: 5px;
+    width: 100px;
+    padding: .25%;
+}
 nav{
         display:none;
     }
@@ -362,7 +372,8 @@ input {
         margin:1%;
         font-size: 125%;
     }
-    .prefList{
+
+    #prefList{
         padding: 0;
         margin: 0;
 

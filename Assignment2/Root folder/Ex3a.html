@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <script src="../scripts/pleaseWork.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
     </head>
@@ -46,11 +47,11 @@
                     <p class = "opinion">Only go here if you have no other option. The food came out cold, the waiter was rude and we caught him spitting in our food, and their roof was leaking right over our table. AVOID AT ALL COSTS!</p>
                 </div>
                 <div class = "preferences">
-                    <h3>My Preferences<i class="fa fa-plus-square"></i></h3>
-                        <ul class = "prefList">
-                            <li class = "pref">Good Eats <i class = "fa fa-times-circle"></i></li>
-                            <li class = "pref">Ambience <i class = "fa fa-times-circle"></i></li>
-                            <li class = "pref">Authentic <i class = "fa fa-times-circle"></i></li>
+                    <h3>My Preferences<i class="fa fa-plus-square" onclick = "addKeyword()"></i></h3>
+                        <ul id = "prefList">
+                            <li class = "pref">Good Eats <i class = "fa fa-times-circle" onclick = "this.parentElement.style.display = 'none'"></i></li>
+                            <li class = "pref">Ambience <i class = "fa fa-times-circle" onclick = "this.parentElement.style.display = 'none'"></i></li>
+                            <li class = "pref" >Authentic <i class = "fa fa-times-circle" onclick = "this.parentElement.style.display = 'none'"></i></li>
                         </ul>
                 </div>
             </div>
@@ -124,6 +125,21 @@
         function changeCssOpinion() {
             document.getElementById("personalInfoArticle").style.display = "none";
             document.getElementById("opinionArticle").style.display = "inline-block";
+        }
+        function addKeyword() {
+            var listItem = document.createElement("li");
+            listItem.classList.add("pref");
+     
+            listItem.innerHTML = "<input type = 'text' class = 'prefListInput'></input><i class = 'fa fa-times-circle' id = 'new' onclick = 'deleteKeyItem()'></i>";
+            
+//            var x = document.getElementById("newItem");
+////            x.innerHTML = "please";
+            document.getElementById("prefList").appendChild(listItem);
+        }
+        function deleteKeyItem() {
+//            document.getElementById("new").parentElement.style.display = 'none';
+            $("#new").parent().click().remove();
+            
         }
     </script>
 
