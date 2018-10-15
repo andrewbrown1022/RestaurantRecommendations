@@ -36,10 +36,10 @@ header h1{
 
 
     }
-.prefListInput{
+#prefListInput{
     margin: 0%;
     font-size: 110%;
-    margin-right: 5px;
+    margin-right: 10px;
     width: 100px;
     padding: .25%;
 }
@@ -316,6 +316,10 @@ input {
         width:25%;  
     }
     */
+    
+    #keywordPlus{
+        margin: 0;
+    }
     /* Styles the list items*/
     .fa-plus-square{
         margin-left: 50%;

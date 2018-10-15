@@ -118,6 +118,7 @@
         
     </body>
     <script>
+        var click = 0;
         function changeCssPersonal() {
             document.getElementById("opinionArticle").style.display = "none";
             document.getElementById("personalInfoArticle").style.display = "inline-block";
@@ -126,20 +127,40 @@
             document.getElementById("personalInfoArticle").style.display = "none";
             document.getElementById("opinionArticle").style.display = "inline-block";
         }
+        
         function addKeyword() {
-            var listItem = document.createElement("li");
-            listItem.classList.add("pref");
-     
-            listItem.innerHTML = "<input type = 'text' class = 'prefListInput'></input><i class = 'fa fa-times-circle' id = 'new' onclick = 'deleteKeyItem()'></i>";
-            
-//            var x = document.getElementById("newItem");
-////            x.innerHTML = "please";
-            document.getElementById("prefList").appendChild(listItem);
+            console.log(click);
+           
+            var inputTempStorage = document.getElementById("prefListInput");
+            if (inputTempStorage != null  && click != 0){
+                alert("Can not create new blank keyword without completing existing one");
+            }
+            else{
+                click +=1;
+                console.log(click);
+                var listItem = document.createElement("li");
+                listItem.classList.add("pref");
+                listItem.innerHTML = "<input type = 'text' id = 'prefListInput'></input><i class='fa fa-plus-square' id = 'keywordPlus' onclick = 'store()'></i>"
+                document.getElementById("prefList").appendChild(listItem);
+            }
         }
         function deleteKeyItem() {
 //            document.getElementById("new").parentElement.style.display = 'none';
             $("#new").parent().click().remove();
+        }
+        function store() {
+            var inputStorage = document.getElementById("prefListInput");
+            sessionStorage.setItem("keyword", inputStorage.value);
+            var storedItem = sessionStorage.getItem("keyword");
+            if (sessionStorage.getItem("keyword") == "") {
+               alert("Must fill in keyword");  
+            } 
+           else{
+               document.getElementById("prefListInput").parentElement.innerHTML = storedItem + " "+ "<i class = 'fa fa-times-circle' id = 'new' onclick = 'deleteKeyItem()'></i></li>";
+               sessionStorage.clear();
+            }
             
+
         }
     </script>
 
