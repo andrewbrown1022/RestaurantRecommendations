@@ -39,11 +39,12 @@
                 </div>
                 <div class = "latestOpinions" id = "reviews">
                     <h3 onclick = "changeCssOpinion()">Latest Opinions</h3>
-                    <h4>Founding Farmers,<i> Washington D.C.</i></h4>
+                    <h4 onclick = "openModal()" >Founding Farmers,<i> Washington D.C.</i></h4>
                     <p class = "opinion">The food was excellent. It came out very fast and the service was great. My only complaint is that I couldn't try every meal. </p>
                     <h4>Nomad Pizza Company, <i>New York, NY</i></h4>
                     <p class = "opinion">Who put this quaint authentic Italian pizzeria in the middle of bustling NYC? 10/10 would recommend.</p>
-                    <h4>Oishi, <i>Philadelphia, PA</i></h4>
+                    <h4>Oishi, <i>Philadelphia, PA</i>
+                    </h4>
                     <p class = "opinion">Only go here if you have no other option. The food came out cold, the waiter was rude and we caught him spitting in our food, and their roof was leaking right over our table. AVOID AT ALL COSTS!</p>
                 </div>
                 <div class = "preferences">
@@ -103,6 +104,19 @@
             </div>
             
         </article>
+        <div class = "opinionModal" id = "foundingFarmersOpinionModal">
+            <div class = "modalContainer">
+                <div class = "modalHeadingContainer">
+                    <h2 class = "modalHeading">Founding Farmers</h2>
+                    <img src = "../images/founding-farmers.jpg" class =  "modalLogo">
+                    <i class = "fa fa-times-circle" id = "modalClose" onclick ="closeModal()"></i>
+                </div>
+                <h4 class = "modalInfo"><b>Address:</b> 1924 Pennsylvania Ave NW, Washington, DC 20006, USA</h4>
+                <h4 class = "modalInfo"><b>Website:</b> <a href = "https://www.wearefoundingfarmers.com/menus/">wearefoundingfarmers.com</a></h4>
+                <h4 class = "modalInfo"><b>Phone Number:</b> +1 202-822-8783</h4>
+                <h4 class = "modalInfo"><b>Opinion:</b> The food was excellent. It came out very fast and the service was great. My only complaint is that I couldn't try every meal. The staff went out of their way to make our visit memorable, we were seated on time and staff went out of their way to ensure the experience level was superb. We truly appreciated the excellent food and top notch service provided by the entire team from the time I made the reservation to my check-in at the hostess desk and our departure. My compliments to the chef and kitchen as the the preparation and presentation food was amazing and the service was beyond compare.</h4>
+            </div>
+        </div>
 <!--        Creates Mobile Nav at bottom of page-->
         <div class = "mobileNav">
             <ul class = "mobileList">
@@ -140,7 +154,7 @@
                 console.log(click);
                 var listItem = document.createElement("li");
                 listItem.classList.add("pref");
-                listItem.innerHTML = "<input type = 'text' id = 'prefListInput'></input><i class='fa fa-plus-square' id = 'keywordPlus' onclick = 'store()'></i>"
+                listItem.innerHTML = "<input type = 'text' id = 'prefListInput' placeholder = 'Keyword'></input><i class='fa fa-plus-square' id = 'keywordPlus' onclick = 'store()'></i>"
                 document.getElementById("prefList").appendChild(listItem);
             }
         }
@@ -159,8 +173,18 @@
                document.getElementById("prefListInput").parentElement.innerHTML = storedItem + " "+ "<i class = 'fa fa-times-circle' id = 'new' onclick = 'deleteKeyItem()'></i></li>";
                sessionStorage.clear();
             }
-            
-
+        }
+        function openModal() {
+            document.getElementById("foundingFarmersOpinionModal").style.display = "block";
+        }
+        function closeModal() { 
+            document.getElementById("foundingFarmersOpinionModal").style.display = "none";
+        }
+        var foundingFarmersModal = document.getElementById("foundingFarmersOpinionModal");
+        window.onclick = function(event) {
+            if (event.target == foundingFarmersModal) {
+            foundingFarmersModal.style.display = "none";
+            }
         }
     </script>
 
