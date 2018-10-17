@@ -7,10 +7,7 @@
         <title>BeeHive</title>
         <link rel = "stylesheet" href = "../style/Exercise3.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-        <script src="../scripts/pleaseWork.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
 
     </head>
     <body>
@@ -20,13 +17,14 @@
             <nav>
                 <a href = "Exercise1.html">Home</a><a href = "#reviews">Reviews</a><a href = "#aboutMe">About Me</a>
             </nav>
+            <button type="button" id="logOut" onclick = "logOut()">Log out</button>
         </header>
 <!--        Creates Mobile Navigation -->
         <div id = "alternativeNav">
             <a href = "Exercise1.html">Home</a><a href = "#reviews">Reviews</a><a href = "#aboutMe">About Me</a>
         </div>
      <!-- Create left vertical box with specified info--> 
-        <section>
+        <section id = "leftBox">
 <!--            Wraps content to help with formatting-->
             <div class = "content-wrap">
                 <div class = "profileNameAndImage">
@@ -66,7 +64,7 @@
             <div class = "content-wrap">  
                 <h2>Personal Information</h2>
                 <div class ="input">
-                    <form action = "">
+                    <form action = "" id = "personalInfoForm">
                         <input type="text" name="firstName" placeholder="First Name" class = "name">
                         <input type="text" name="lastName" placeholder="Last Name" class = "name">
                         <input type="text" name="email" placeholder="Email" class = "email">
@@ -149,7 +147,42 @@
                 <li><i class = "fa fa-user"></i><br><a href ="Exercise3a.html" title ="link to personal info" class = "mobileAnchor">Personal </a></li><li><i class = "fa fa-comment"></i><br><a href = "Exercise2b.html" title = "link to Opinions" class = "mobileAnchor">Opinions</a></li><li><i class = "fa fa-heart"></i><br><a href = "Exercise3a.html" class = "mobileAnchor">Preferences</a></li>
             </ul>
         </div>
-        <footer>
+        <div id = "regMenu">
+            <button type = "button" id = "register" onclick="register()">Register</button>
+            <button type = "button" id = "logIn" onclick = "login()">Log in</button>
+        </div>
+        <div id = "regFormContainer">
+            <h3 class = "regInfo">Account Information</h3>
+            <form id = "regForm">
+                Username: <input class = "regInput" name = "username" type = "text" required>
+                <br>
+                Password: <input class = "regInput" name = "password" type = password required>
+            <h3 class = "regInfo">Personal Information</h3>
+                First Name: <input class = "regInput" form = "regForm" name = "firstName" type = text required>
+                Last Name: <input class = "regInput" form = "regForm" name = "lastName" type = text required>
+                Email: <input class = "regInput" name = "email" form = "regForm" type = email required>
+                <br>
+                Select a profile picture: <input class = "regInput" type="file" form = "regForm" name="myFile">
+                Address: <input class = "regInput" name = "address" type = address form = "regForm" required>
+                Date of Birth: <input class = "regInput" name = "DOB" type = "date" form = regForm required>
+                Phone Number: <input class = "regInput" name = "phoneNumber" type = "number" form regForm>
+                <br>
+                I have read and accept the terms of use. <input type = "checkbox" form = "regForm" required>
+                <button type = "submit" id = "save" onclick = "saveForm()" form = "regForm">Save</button>
+            <button type = reset id = "delete" form = "regForm">Delete</button>
+            </form>
+            
+        </div>
+        <div id = "logInContainer">
+                <h1>Login</h1>
+                <form id = "logInForm">
+                    Username: <input type = "text" name = "username" class = "logInInput" required>
+                    <br>
+                    Password: <input type = "password" name = "password" class = "logInInput" required> 
+                    <button type = "button" id = "logInFormButton" onclick = "logInForm()">Log in</button>
+                </form>
+            </div>
+        <footer id = "footer">
     <!-- Creates links to copyright, Facebook, and Instagram-->
             <a href = "https://www.duke.edu/" title = "Copyright Info" target = "_blank" class = "borderRight">Copyright Info</a>
             <a href = "https://www.facebook.com/" title = "Facebook" target = "_blank" class = "borderRight">Facebook</a>
@@ -232,7 +265,85 @@
                 oishiModal.style.display = "none";
             }
         }
+        function logOut() {
+            document.getElementById("leftBox").style.display = "none";
+            document.getElementById("personalInfoArticle").style.display = "none";
+            document.getElementById("opinionArticle").style.display = "none";
+           document.getElementById("regMenu").style.display = "block";
+            document.getElementById("logOut").style.display = "none";
+        }
+        function register() {
+            document.getElementById("regMenu").style.display = "none";
+            document.getElementById("regFormContainer").style.display = "block";
+        }
+        function login() {
+            document.getElementById("regMenu").style.display = "none";            document.getElementById("logInContainer").style.display = "block";
+             document.getElementById("logInForm").style.display = "block";
+            
+        }
+        function logInForm() {
+            var logForm = document.getElementById("logInForm");
+            var cookie = getCookie(logForm.username.value);
+            var cookieDecoded = JSON.parse(cookie);
+            console.log(cookieDecoded.username);
+            if(cookie == "" || cookie == null){
+                alert("Specified username is not registered");
+            }
+            else{
+                document.getElementById("logInContainer").style.display = "none";
+                 document.getElementById("leftBox").style.display = "inline-block";
+                document.getElementById("personalInfoArticle").style.display = "inline-block";
+                document.getElementById("opinionArticle").style.display = "none";
+                document.getElementById("regMenu").style.display = "none";
+                document.getElementById("logOut").style.display = "block";
+                var x = document.getElementById("personalInfoForm")
+                
+                x.firstName.value = cookieDecoded.firstName;
+                x.lastName.value = cookieDecoded.lastName;
+                x.email.value = cookieDecoded.email;
+                x.address.value = cookieDecoded.address;
+            }
+            
+        }
+        var today = new Date();
+        var expiry = new Date(today.getTime() + 30 * 24 * 3600 * 1000); 
+        function setCookie(name, value) {
+            document.cookie=name + "=" + escape(value) + "; path=/; expires=" + expiry.toGMTString();
+        }
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for(var i = 0; i <ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        function saveForm() { 
+            var form = document.getElementById('regForm');
+            if (getCookie(form.username.value) == ""){
+                setCookie(form.username.value, JSON.stringify({password:form.password.value, firstName:form.firstName.value,lastName:form.lastName.value,email:form.email.value, address:form.address.value}));
+                return true;
+            }
+            else{
+
+                alert("Username already exists");
+
+            }
+        }
+      
+    
     </script>
 
 </html>
-
+<!--
+ var x = getCookie("c");
+var parsed = JSON.parse(x);
+console.log(parsed);
+-->

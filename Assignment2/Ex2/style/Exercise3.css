@@ -14,12 +14,173 @@
     #opinionArticle{
         display: none;
     }
+
     body{
             background-color: aliceblue;
             font-family: sans-serif;
             margin:0;
             position: relative;
         }
+#logInContainer{
+    min-height: 86%;
+    display: none;
+        text-align: center;
+}
+    #logOut{
+        font-size: 14px;
+        font-weight: 800;
+    padding: 6px 12px;
+    margin: 26px 7px 0 0;
+        margin-top: 25px;
+    float: right;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid;
+        background: red;
+        border-radius: 50px;
+    }
+#save{
+     font-size: 14px;
+        font-weight: 800;
+    padding: 6px 12px;
+    margin: 26px 7px 0 0;
+        margin-top: 25px;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid;
+        background: green;
+        border-radius: 50px;
+}
+#delete{
+     font-size: 14px;
+        font-weight: 800;
+    padding: 6px 12px;
+    margin: 26px 7px 0 0;
+        margin-top: 25px;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid;
+        background: red;
+        border-radius: 50px;
+}
+    #regMenu{
+        min-height: 86%;
+        text-align: center;
+        display: none;
+    }
+    #regFormContainer{
+        min-height: 86%;
+        display: none;
+        text-align: center;
+
+    }
+#regForm{
+    padding: 1%;
+    margin: 0;
+}
+.regInfo{
+    margin: 0;
+    padding: 1%;
+}
+.regInput{
+    margin: 1%;
+    padding: .5%;
+}
+    #register{
+        top: 50%;
+        font-size: 40px;
+        font-weight: 800;
+        padding: 2%;
+        margin: 25% 20px 20px 20px;        
+        text-decoration: none;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-image: none;
+        border: 1px solid;
+        background: green;
+        border-radius: 50px;
+    }
+#logIn{
+    font-size: 40px;
+        font-weight: 800;
+    padding: 2%;
+    margin: 25% 20px 20px 20px;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid;
+        background:#1a1aff;
+        border-radius: 50px;
+}
+#logInFormButton{
+    display: block;
+    font-size: 14px;
+        font-weight: 800;
+    padding: 1%;
+    margin: auto;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid;
+        background:green;
+        border-radius: 50px;
+}
     header{
             background-color:#cccccc;
             color: white;
@@ -256,7 +417,7 @@
     }
     nav{
         position: absolute;
-        right: 0px;
+        right: 80px;
         bottom: 2%;
         display: inline-block;
         width: 33%;
