@@ -29,11 +29,11 @@
                 <input id = "searchBar" type="text" placeholder="Search.."><button type="submit" id = "searchIcon"><i class="fa fa-search"></i></button>
             </div>
             <div id = "galleryContainer">
-                <a data-fancybox="gallery" href="../images/blur-breakfast-chef-262978.jpg" data-caption = "57th Lounge, Vienna"><img src="../images/pexels-photo-262978.jpeg"></a>
-                <a data-fancybox="gallery" href="../images/cafe-chairs-menu-6267.jpg" data-caption = "Mad Hatter's, Durham"><img src="../images/menu-restaurant-vintage-table.jpg"></a>
-                <a data-fancybox="gallery" href="../images/beverages-brunch-cocktail-5317.jpg" data-caption = "Foster's, Philadelphia"><img src="../images/food-salad-restaurant-person.jpg"></a>
-                <a data-fancybox="gallery" href="../images/chairs-coffee-shop-drinking-glasses-67468.jpg" data-caption = "Illiano's, Niantic"><img src="../images/pexels-photo-67468.jpeg"></a>
-                <a data-fancybox="gallery" href="../images/alcohol-architecture-bar-260922.jpg" data-caption = "Elmo's, Durham"><img src="../images/pexels-photo-260922.jpeg"></a>
+                <a data-fancybox="gallery" href="../images/blur-breakfast-chef-262978.jpg" data-caption = "57th Lounge, Vienna"><img src="../images/pexels-photo-262978.jpeg" alt = "57th Lounge"></a>
+                <a data-fancybox="gallery" href="../images/cafe-chairs-menu-6267.jpg" data-caption = "Mad Hatter's, Durham"><img src="../images/menu-restaurant-vintage-table.jpg" alt = "Mad Hatter's"></a>
+                <a data-fancybox="gallery" href="../images/beverages-brunch-cocktail-5317.jpg" data-caption = "Foster's, Philadelphia"><img src="../images/food-salad-restaurant-person.jpg" alt = "Foster's"></a>
+                <a data-fancybox="gallery" href="../images/chairs-coffee-shop-drinking-glasses-67468.jpg" data-caption = "Illiano's, Niantic"><img src="../images/pexels-photo-67468.jpeg" alt = "Illiano's"></a>
+                <a data-fancybox="gallery" href="../images/alcohol-architecture-bar-260922.jpg" data-caption = "Elmo's, Durham"><img src="../images/pexels-photo-260922.jpeg" alt = "Elmo's"></a>
             </div>
         </div>
 <!--        Creates Mobile Navigation -->
@@ -91,7 +91,7 @@
                         <input type="text" name="email" placeholder="Email" class = "email" required>
                         <input type="text" name="address" placeholder="Address" class = "addressPhone" required>
                         <input type="text" name="phoneNumber" placeholder="Phone Number" class = "addressPhone" required>
-                        <input type="date" name="DOB" placeholder="Birthday" class = "birthday" required>
+                        <input type="date" name="DOB"  class = "birthday" required>
                         <button type = "button" id = "savePersonal" onclick = "savePersonalForm()" form = "regForm">Save</button>
                     </form>    
                 </div>
@@ -128,8 +128,8 @@
             <div class = "modalContainer">
                 <div class = "modalHeadingContainer">
                     <h2 class = "modalHeading">Founding Farmers</h2>
-                    <img src = "../images/founding-farmers.jpg" class =  "modalLogo">
-                    <i class = "fa fa-times-circle" id = "modalClose" onclick ="closeFoundingModal()"></i>
+                    <img src = "../images/founding-farmers.jpg" class =  "modalLogo" alt = "FoundingFarmers">
+                    <i class = "fa fa-times-circle " id = "modalClose1" onclick ="closeFoundingModal()"></i>
                 </div>
                 <h4 class = "modalInfo"><b>Address:</b> 1924 Pennsylvania Ave NW, Washington, DC 20006, USA</h4>
                 <h4 class = "modalInfo"><b>Website:</b> <a href = "https://www.wearefoundingfarmers.com/menus/" target = _blank>wearefoundingfarmers.com</a></h4>
@@ -141,8 +141,8 @@
             <div class = "modalContainer">
                 <div class = "modalHeadingContainer">
                     <h2 class = "modalHeading">Nomad Pizza</h2>
-                    <img src = "../images/nomadsPizza.jpg" class =  "modalLogo">
-                    <i class = "fa fa-times-circle" id = "modalClose" onclick ="closeNomadModal()"></i>
+                    <img src = "../images/nomadsPizza.jpg" class =  "modalLogo" alt = "nomadsPizza">
+                    <i class = "fa fa-times-circle" id = "modalClose2" onclick ="closeNomadModal()"></i>
                 </div>
                 <h4 class = "modalInfo"><b>Address:</b> 611 S 7th St, New York, NY 10001, USA</h4>
                 <h4 class = "modalInfo"><b>Website:</b> <a href = "http://www.nomadpizzaco.com/" target = _blank>nomadpizzaco.com</a></h4>
@@ -154,8 +154,8 @@
             <div class = "modalContainer">
                 <div class = "modalHeadingContainer">
                     <h2 class = "modalHeading">Oishi</h2>
-                    <img src = "../images/oishiLogo.jpeg" class =  "modalLogo">
-                    <i class = "fa fa-times-circle" id = "modalClose" onclick ="closeOishiModal()"></i>
+                    <img src = "../images/oishiLogo.jpeg" class =  "modalLogo" alt = "oishiLogo">
+                    <i class = "fa fa-times-circle" id = "modalClose3" onclick ="closeOishiModal()"></i>
                 </div>
                 <h4 class = "modalInfo"><b>Address:</b> 4040 Locust St, Philadelphia, PA 19104, USA</h4>
                 <h4 class = "modalInfo"><b>Website:</b> <a href = "http://www.ramenbarphilly.com/" target = _blank>ramenbarphilly.com/</a></h4>
@@ -213,8 +213,6 @@
             <a href = "https://www.facebook.com/" title = "Facebook" target = "_blank" class = "borderRight">Facebook</a>
             <a href = "https://www.instagram.com/" title = "Instagram" target = "_blank">Instagram</a>
         </footer>
-        
-    </body>
     <script>
         var click = 0;
         function changeCssPersonal() {
@@ -295,6 +293,7 @@
             document.getElementById("opinionArticle").style.display = "none";
            document.getElementById("regMenu").style.display = "block";
             document.getElementById("logOut").style.display = "none";
+            
         }
         function register() {
             document.getElementById("regMenu").style.display = "none";
@@ -309,13 +308,23 @@
             $("#homePageContainer").hide();
             $("#regFormContainer").hide();
             $("#logOut").hide();
+            $("#leftBox").hide();
+            $("#personalInfoArticle").hide();
+            $("#opinionArticle").hide();
 
         }
         function logInForm() {
+//            $("#logOut").hide();
             var logForm = document.getElementById("logInForm");
             var cookie = getCookie(logForm.username.value);
-            var cookieDecoded = JSON.parse(cookie);        
-            if(cookie == "" || cookie == null){
+            if(cookie == null || cookie == "" || cookie == undefined){
+                alert("Invalid Username");
+            }
+            else{
+                var cookieDecoded = JSON.parse(cookie);
+            }
+
+            if(cookieDecoded.username == "" || cookieDecoded.username == null){
                 alert("Specified username is not registered");
             }
             else if (cookieDecoded.password == logForm.password.value){
@@ -338,6 +347,8 @@
             else{
                 alert("Incorrect username/password combination.");
             }
+            $("#logOut").hide();
+
             
         }
         var today = new Date();
@@ -363,7 +374,7 @@
         function saveForm() { 
             var form = document.getElementById('regForm');
             if (getCookie(form.username.value) == "") {
-                setCookie(form.username.value, JSON.stringify({password:form.password.value, firstName:form.firstName.value,lastName:form.lastName.value,email:form.email.value, address:form.address.value,DOB:form.DOB.value,phoneNumber:form.phoneNumber.value}));
+                setCookie(form.username.value, JSON.stringify({username:form.username.value,password:form.password.value, firstName:form.firstName.value,lastName:form.lastName.value,email:form.email.value, address:form.address.value,DOB:form.DOB.value,phoneNumber:form.phoneNumber.value}));
                 return true;
             }
             else{
@@ -402,11 +413,9 @@
                 alert("Must Complete all fields");
             }
             else{
-                setCookie(form.username.value, JSON.stringify({password:form.password.value, firstName:form.firstName.value,lastName:form.lastName.value,email:form.email.value, address:form.address.value,DOB:form.DOB.value,phoneNumber:form.phoneNumber.value}));
+                setCookie(form.username.value, JSON.stringify({username:form.username.value,password:form.password.value, firstName:form.firstName.value,lastName:form.lastName.value,email:form.email.value, address:form.address.value,DOB:form.DOB.value,phoneNumber:form.phoneNumber.value}));
                 document.getElementById("aboutMe").innerHTML = form.username.value;
                 document.getElementById("nameMain").innerHTML = "Name: "+ form.firstName.value + " " + form.lastName.value;
-                document.getElementById("country")
-                document.getElementById("memberSince")
                 return true;
             }
         }
@@ -434,7 +443,10 @@
             $("#regFormContainer").hide();
         }
         $.fancybox.defaults.slideShow.autoStart = true;
-    </script>
+    </script>    
+    </body>
+    
+    
     
 
 </html>

@@ -832,7 +832,19 @@ border: 2px black solid;
         color: black;
         font-weight: 400;
     }
-    #modalClose{
+    #modalClose1{
+        float: right;
+        margin: 10px 30px;
+        font-size: 1.5em;
+        
+    }
+    #modalClose2{
+        float: right;
+        margin: 10px 30px;
+        font-size: 1.5em;
+        
+    }
+    #modalClose3{
         float: right;
         margin: 10px 30px;
         font-size: 1.5em;
