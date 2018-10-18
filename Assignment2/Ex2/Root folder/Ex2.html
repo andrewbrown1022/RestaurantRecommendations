@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset = "utf-8">
+        <title>BeeHive</title>
+        <link rel = "stylesheet" href = "../style/Exercise3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    </head>
+    <body>
+        <!-- Create Navigation Menu and Place for Website Title --> 
+        <header id = "topOfPage">
+            <h1>BeeHive</h1>
+            <nav>
+                <a href = "Exercise1.html">Home</a><a href = "#reviews">Reviews</a><a href = "#aboutMe">About Me</a>
+            </nav>
+            <button type="button" id="logOut" onclick = "logOut()">Log out</button>
+        </header>
+<!--        Creates Mobile Navigation -->
+        <div id = "alternativeNav">
+            <a href = "Exercise1.html">Home</a><a href = "#reviews">Reviews</a><a href = "#aboutMe">About Me</a>
+        </div>
+     <!-- Create left vertical box with specified info--> 
+        <section id = "leftBox">
+<!--            Wraps content to help with formatting-->
+            <div class = "content-wrap">
+                <div class = "profileNameAndImage">
+                    <img src = "../images/0.jpg.jpeg" class = "userphoto" alt = "profilePhoto">
+                    <h2 class = "user" id = "aboutMe">JaneDoe123 </h2>
+                </div>
+                <div class = "personalInfo"> 
+                    <h3 onclick = "changeCssPersonal()">Personal Information</h3>
+                    <p class = "details" id = "nameMain">Name: Jane Doe</p> 
+                    <br><p class = "details" id = "country">Country of Origin: United States</p> <br>
+                    <p class = "details" id = "memberSince">Member Since: 1776</p>
+                </div>
+                <div class = "latestOpinions" id = "reviews">
+                    <h3 onclick = "changeCssOpinion()">Latest Opinions</h3>
+                    <h4 onclick = "openFoundingModal()" >Founding Farmers,<i> Washington D.C.</i></h4>
+                    <p class = "opinion">The food was excellent. It came out very fast and the service was great. My only complaint is that I couldn't try every meal. </p>
+                    <h4 onclick = "openNomadModal()">Nomad Pizza Company, <i>New York, NY</i></h4>
+                    <p class = "opinion">Who put this quaint authentic Italian pizzeria in the middle of bustling NYC? 10/10 would recommend.</p>
+                    <h4 onclick = "openOishiModal()">Oishi, <i>Philadelphia, PA</i>
+                    </h4>
+                    <p class = "opinion">Only go here if you have no other option. The food came out cold, the waiter was rude and we caught him spitting in our food, and their roof was leaking right over our table. AVOID AT ALL COSTS!</p>
+                </div>
+                <div class = "preferences">
+                    <h3>My Preferences<i class="fa fa-plus-square" onclick = "addKeyword()"></i></h3>
+                        <ul id = "prefList">
+                            <li class = "pref">Good Eats <i class = "fa fa-times-circle" onclick = "this.parentElement.style.display = 'none'"></i></li>
+                            <li class = "pref">Ambience <i class = "fa fa-times-circle" onclick = "this.parentElement.style.display = 'none'"></i></li>
+                            <li class = "pref" >Authentic <i class = "fa fa-times-circle" onclick = "this.parentElement.style.display = 'none'"></i></li>
+                        </ul>
+                </div>
+            </div>
+        </section>
+<!--        Creates Menu for Tablet-->
+        <div id = "tabletMenu">
+            <a href ="Exercise3a.html" title ="link to personal info" class = "tabletAnchor">Personal Information</a><a href = "Exercise2b.html" title = "link to Opinions" class = "tabletAnchor">Latest Opinions</a><a href = "Exercise3a.html" id = "tabletAnchor2">My Preferences</a>
+        </div>
+    <!-- Creates right box -->
+        <article id = "personalInfoArticle">
+            <div class = "content-wrap">  
+                <h2>Personal Information</h2>
+                <div class ="input">
+                    <form id = "personalInfoForm" >
+                        <input class = "name" name = "username" placeholder = "Username" type = "text" required>
+                        <input class = "name" name = "password" placeholder="Password" type = "password" required>
+                        <input type="text" name="firstName" placeholder="First Name" class = "name" required>
+                        <input type="text" name="lastName" placeholder="Last Name" class = "name" required>
+                        <input type="text" name="email" placeholder="Email" class = "email" required>
+                        <input type="text" name="address" placeholder="Address" class = "addressPhone" required>
+                        <input type="text" name="phoneNumber" placeholder="Phone Number" class = "addressPhone" required>
+                        <input type="date" name="DOB" placeholder="Birthday" class = "birthday" required>
+                        <button type = "button" id = "savePersonal" onclick = "savePersonalForm()" form = "regForm">Save</button>
+                    </form>    
+                </div>
+                <h2>My Activity in the App</h2>
+<!--                Creates Icons-->
+                <div class = "activityIcons">
+                    <ul class= "iconList">
+                        <li>X<br>Points</li><li>2<br>level</li><li>3<br>Opinions</li><li>5<br>photos</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+        <article id = "opinionArticle">
+            <div class = "content-wrap">
+                <h2 class = "opinionHeader">Latest Opinions</h2>
+                <div class = "opinionLatest">
+                    <img src = "../images/founding-farmers.jpg" alt = "foundingFarmers" class = "foodPictures">
+                    <h3>Founding Farmers</h3>
+                    <h3>Washington D.C., USA</h3>
+                    <h3>24, September, 2018</h3>
+                    <p>The food was excellent. It came out very fast and the service was great. My only complaint is that I couldn't try every meal. The staff went out of their way to make our visit memorable, we were seated on time and staff went out of their way to ensure the experience level was superb. We truly appreciated the excellent food and top notch service provided by the entire team from the time I made the reservation to my check-in at the hostess desk and our departure. My compliments to the chef and kitchen as the the preparation and presentation food was amazing and the service was beyond compare.</p>
+                </div>
+                <div class = "opinionLatest">
+                    <img src ="../images/nomadsPizza.jpg" alt = "nomadsPizza" class = "foodPictures">
+                    <h3>Nomad Pizza Company</h3>
+                    <h3>New York, USA</h3>
+                    <h3>22, September, 2018</h3>
+                    <p>Who put this quaint authentic Italian pizzeria in the middle of bustling NYC? 10/10 would recommend. Our order was taken immediately. We ordered the fall pumpkin seed salad and a large pie. The Trenton tomato pie is definitely not the same as Consohocken tomato pie but is very good. Thin crust, heavy sauce and light cheese. We did not get the citrus dressing on our salad. Good call because the apples tasted like they had been soaked in it and they were bitter. The fresh mozzarella in the salad, so good! Melted in your mouth! I should have gotten that on my pizza!</p>
+                </div>
+            </div>
+            
+        </article>
+        <div class = "opinionModal" id = "foundingFarmersOpinionModal">
+            <div class = "modalContainer">
+                <div class = "modalHeadingContainer">
+                    <h2 class = "modalHeading">Founding Farmers</h2>
+                    <img src = "../images/founding-farmers.jpg" class =  "modalLogo">
+                    <i class = "fa fa-times-circle" id = "modalClose" onclick ="closeFoundingModal()"></i>
+                </div>
+                <h4 class = "modalInfo"><b>Address:</b> 1924 Pennsylvania Ave NW, Washington, DC 20006, USA</h4>
+                <h4 class = "modalInfo"><b>Website:</b> <a href = "https://www.wearefoundingfarmers.com/menus/" target = _blank>wearefoundingfarmers.com</a></h4>
+                <h4 class = "modalInfo"><b>Phone Number:</b> +1 202-822-8783</h4>
+                <h4 class = "modalInfo"><b>Opinion:</b> The food was excellent. It came out very fast and the service was great. My only complaint is that I couldn't try every meal. The staff went out of their way to make our visit memorable, we were seated on time and staff went out of their way to ensure the experience level was superb. We truly appreciated the excellent food and top notch service provided by the entire team from the time I made the reservation to my check-in at the hostess desk and our departure. My compliments to the chef and kitchen as the the preparation and presentation food was amazing and the service was beyond compare.</h4>
+            </div>
+        </div>
+        <div class = "opinionModal" id = "nomadPizzaOpinionModal">
+            <div class = "modalContainer">
+                <div class = "modalHeadingContainer">
+                    <h2 class = "modalHeading">Nomad Pizza</h2>
+                    <img src = "../images/nomadsPizza.jpg" class =  "modalLogo">
+                    <i class = "fa fa-times-circle" id = "modalClose" onclick ="closeNomadModal()"></i>
+                </div>
+                <h4 class = "modalInfo"><b>Address:</b> 611 S 7th St, New York, NY 10001, USA</h4>
+                <h4 class = "modalInfo"><b>Website:</b> <a href = "http://www.nomadpizzaco.com/" target = _blank>nomadpizzaco.com</a></h4>
+                <h4 class = "modalInfo"><b>Phone Number:</b> +1 215-238-0900</h4>
+                <h4 class = "modalInfo"><b>Opinion:</b> Who put this quaint authentic Italian pizzeria in the middle of bustling NYC? 10/10 would recommend. Our order was taken immediately. We ordered the fall pumpkin seed salad and a large pie. The Trenton tomato pie is definitely not the same as Consohocken tomato pie but is very good. Thin crust, heavy sauce and light cheese. We did not get the citrus dressing on our salad. Good call because the apples tasted like they had been soaked in it and they were bitter. The fresh mozzarella in the salad, so good! Melted in your mouth! I should have gotten that on my pizza!</h4>
+            </div>
+        </div>
+        <div class = "opinionModal" id = "oishiOpinionModal">
+            <div class = "modalContainer">
+                <div class = "modalHeadingContainer">
+                    <h2 class = "modalHeading">Oishi</h2>
+                    <img src = "../images/oishiLogo.jpeg" class =  "modalLogo">
+                    <i class = "fa fa-times-circle" id = "modalClose" onclick ="closeOishiModal()"></i>
+                </div>
+                <h4 class = "modalInfo"><b>Address:</b> 4040 Locust St, Philadelphia, PA 19104, USA</h4>
+                <h4 class = "modalInfo"><b>Website:</b> <a href = "http://www.ramenbarphilly.com/" target = _blank>ramenbarphilly.com/</a></h4>
+                <h4 class = "modalInfo"><b>Phone Number:</b> +1 215-243-9999</h4>
+                <h4 class = "modalInfo"><b>Opinion:</b> Only go here if you have no other option. The food came out cold, the waiter was rude and we caught him spitting in our food, and their roof was leaking right over our table. AVOID AT ALL COSTS!</h4>
+            </div>
+        </div>
+<!--        Creates Mobile Nav at bottom of page-->
+        <div class = "mobileNav">
+            <ul class = "mobileList">
+                <li><i class = "fa fa-user"></i><br><a href ="Exercise3a.html" title ="link to personal info" class = "mobileAnchor">Personal </a></li><li><i class = "fa fa-comment"></i><br><a href = "Exercise2b.html" title = "link to Opinions" class = "mobileAnchor">Opinions</a></li><li><i class = "fa fa-heart"></i><br><a href = "Exercise3a.html" class = "mobileAnchor">Preferences</a></li>
+            </ul>
+        </div>
+        <div id = "regMenu">
+            <button type = "button" id = "register" onclick="register()">Register</button>
+            <button type = "button" id = "logIn" onclick = "login()">Log in</button>
+        </div>
+        <div id = "regFormContainer">
+            <h3 class = "regInfo">Account Information</h3>
+            <form id = "regForm">
+                Username: <input class = "regInput" name = "username" type = "text" required>
+                <br>
+                Password: <input class = "regInput" name = "password" type = "password" required>
+            <h3 class = "regInfo">Personal Information</h3>
+                First Name: <input class = "regInput" form = "regForm" name = "firstName" type = "text" required>
+                Last Name: <input class = "regInput" form = "regForm" name = "lastName" type = "text" required>
+                Email: <input class = "regInput" name = "email" form = "regForm" type = "email" required>
+                <br>
+                Select a profile picture: <input class = "regInput" type="file" form = "regForm" name="myFile">
+                Address: <input class = "regInput" name = "address" type = "text" form = "regForm" required>
+                <br>
+                Date of Birth: <input class = "regInput" name = "DOB" type = "date" form = "regForm" required>
+                <br>
+                Phone Number: <input class = "regInput" name = "phoneNumber" type = "text" form = "regForm">
+                <br>
+                I have read and accept the terms of use. <input type = "checkbox" form = "regForm" required>
+                <br>
+                <button type = "submit" id = "save" onclick = "saveForm()" form = "regForm">Save</button>
+            <button type = "reset" id = "delete" form = "regForm">Delete</button>
+            </form>
+            
+        </div>
+        <div id = "logInContainer">
+                <h1>Login</h1>
+                <form id = "logInForm">
+                    Username: <input type = "text" name = "username" class = "logInInput" required>
+                    <br>
+                    Password: <input type = "password" name = "password" class = "logInInput" required> 
+                    <button type = "button" id = "logInFormButton" onclick = "logInForm()">Log in</button>
+                </form>
+            </div>
+        <footer id = "footer">
+    <!-- Creates links to copyright, Facebook, and Instagram-->
+            <a href = "https://www.duke.edu/" title = "Copyright Info" target = "_blank" class = "borderRight">Copyright Info</a>
+            <a href = "https://www.facebook.com/" title = "Facebook" target = "_blank" class = "borderRight">Facebook</a>
+            <a href = "https://www.instagram.com/" title = "Instagram" target = "_blank">Instagram</a>
+        </footer>
+        
+    </body>
+    <script>
+        var click = 0;
+        function changeCssPersonal() {
+            document.getElementById("opinionArticle").style.display = "none";
+            document.getElementById("personalInfoArticle").style.display = "inline-block";
+        }
+        function changeCssOpinion() {
+            document.getElementById("personalInfoArticle").style.display = "none";
+            document.getElementById("opinionArticle").style.display = "inline-block";
+        }
+        
+        function addKeyword() {
+            console.log(click);
+           
+            var inputTempStorage = document.getElementById("prefListInput");
+            if (inputTempStorage != null  && click != 0){
+                alert("Can not create new blank keyword without completing existing one");
+            }
+            else{
+                click +=1;
+                console.log(click);
+                var listItem = document.createElement("li");
+                listItem.classList.add("pref");
+                listItem.innerHTML = "<input type = 'text' id = 'prefListInput' placeholder = 'Keyword'></input><i class='fa fa-plus-square' id = 'keywordPlus' onclick = 'store()'></i>"
+                document.getElementById("prefList").appendChild(listItem);
+            }
+        }
+        function deleteKeyItem() {
+            $("#new").parent().click().remove();
+        }
+        function store() {
+            var inputStorage = document.getElementById("prefListInput");
+            sessionStorage.setItem("keyword", inputStorage.value);
+            var storedItem = sessionStorage.getItem("keyword");
+            if (sessionStorage.getItem("keyword") == "") {
+               alert("Must fill in keyword");  
+            } 
+           else{
+               document.getElementById("prefListInput").parentElement.innerHTML = storedItem + " "+ "<i class = 'fa fa-times-circle' id = 'new' onclick = 'deleteKeyItem()'></i></li>";
+               sessionStorage.clear();
+            }
+        }
+        function openFoundingModal() {
+            document.getElementById("foundingFarmersOpinionModal").style.display = "block";
+        }
+        function closeFoundingModal() { 
+            document.getElementById("foundingFarmersOpinionModal").style.display = "none";
+        }
+        function openNomadModal() {
+            document.getElementById("nomadPizzaOpinionModal").style.display = "block";
+        }
+        function closeNomadModal() { 
+            document.getElementById("nomadPizzaOpinionModal").style.display = "none";
+        }
+        function openOishiModal() {
+            document.getElementById("oishiOpinionModal").style.display = "block";
+        }
+        function closeOishiModal() { 
+            document.getElementById("oishiOpinionModal").style.display = "none";
+        }
+        var foundingFarmersModal = document.getElementById("foundingFarmersOpinionModal");
+        var nomadModal = document.getElementById("nomadPizzaOpinionModal");
+        var oishiModal = document.getElementById("oishiOpinionModal");
+        window.onclick = function(event) {
+            if (event.target == foundingFarmersModal) {
+                foundingFarmersModal.style.display = "none";
+            }
+            if (event.target == nomadModal) {
+                nomadModal.style.display = "none";
+            }
+            if (event.target == oishiModal) {
+                oishiModal.style.display = "none";
+            }
+        }
+        function logOut() {
+            document.getElementById("leftBox").style.display = "none";
+            document.getElementById("personalInfoArticle").style.display = "none";
+            document.getElementById("opinionArticle").style.display = "none";
+           document.getElementById("regMenu").style.display = "block";
+            document.getElementById("logOut").style.display = "none";
+        }
+        function register() {
+            document.getElementById("regMenu").style.display = "none";
+            document.getElementById("regFormContainer").style.display = "block";
+        }
+        function login() {
+            document.getElementById("regMenu").style.display = "none";            document.getElementById("logInContainer").style.display = "block";
+             document.getElementById("logInForm").style.display = "block";
+            
+        }
+        function logInForm() {
+
+            var logForm = document.getElementById("logInForm");
+            var cookie = getCookie(logForm.username.value);
+            var cookieDecoded = JSON.parse(cookie);        
+            if(cookie == "" || cookie == null){
+                alert("Specified username is not registered");
+            }
+            else if (cookieDecoded.password == logForm.password.value){
+                document.getElementById("logInContainer").style.display = "none";
+                document.getElementById("leftBox").style.display = "inline-block";
+                document.getElementById("personalInfoArticle").style.display = "inline-block";
+                document.getElementById("opinionArticle").style.display = "none";
+                document.getElementById("regMenu").style.display = "none";
+                document.getElementById("logOut").style.display = "block";
+                var x = document.getElementById("personalInfoForm");
+                x.username.value = logForm.username.value;
+                x.password.value = cookieDecoded.password;
+                x.firstName.value = cookieDecoded.firstName;
+                x.lastName.value = cookieDecoded.lastName;
+                x.email.value = cookieDecoded.email;
+                x.address.value = cookieDecoded.address;
+                x.phoneNumber.value = cookieDecoded.phoneNumber;
+                x.DOB.value = cookieDecoded.DOB;
+            }
+            else{
+                alert("Incorrect username/password combination.");
+            }
+            
+        }
+        var today = new Date();
+        var expiry = new Date(today.getTime() + 30 * 24 * 3600 * 1000); 
+        function setCookie(name, value) {
+            document.cookie=name + "=" + escape(value) + "; path=/; expires=" + expiry.toGMTString();
+        }
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for(var i = 0; i <ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        function saveForm() { 
+            var form = document.getElementById('regForm');
+            if (getCookie(form.username.value) == "") {
+                setCookie(form.username.value, JSON.stringify({password:form.password.value, firstName:form.firstName.value,lastName:form.lastName.value,email:form.email.value, address:form.address.value,DOB:form.DOB.value,phoneNumber:form.phoneNumber.value}));
+                return true;
+            }
+            else{
+                alert("Username already exists");
+            }
+        }
+      function savePersonalForm() { 
+            
+            var form = document.getElementById('personalInfoForm');
+          console.log(form.username.value);
+            if (! form.username.value){
+                alert("Must Complete all fields");
+            }
+            else if(! form.password.value) {
+                alert("Must Complete all fields");
+            }
+            else if(! form.firstName.value) {
+                alert("Must Complete all fields");
+            }
+            else if(! form.lastName.value) {
+                alert("Must Complete all fields");
+            }  
+            else if(! form.email.value) {
+                alert("Must Complete all fields");
+            }
+            else if(! form.address.value) {
+                alert("Must Complete all fields");
+            }
+            else if(! form.email.value) {
+                alert("Must Complete all fields");
+            }
+            else if(! form.DOB.value) {
+                alert("Must Complete all fields");
+            }
+            else if(! form.phoneNumber.value) {
+                alert("Must Complete all fields");
+            }
+            else{
+                setCookie(form.username.value, JSON.stringify({password:form.password.value, firstName:form.firstName.value,lastName:form.lastName.value,email:form.email.value, address:form.address.value,DOB:form.DOB.value,phoneNumber:form.phoneNumber.value}));
+                document.getElementById("aboutMe").innerHTML = form.username.value;
+                document.getElementById("nameMain").innerHTML = "Name: "+ form.firstName.value + " " + form.lastName.value;
+                document.getElementById("country")
+                document.getElementById("memberSince")
+                return true;
+            }
+        }
+    
+    </script>
+
+</html>
+<!--
+ var x = getCookie("c");
+var parsed = JSON.parse(x);
+console.log(parsed);
+-->
