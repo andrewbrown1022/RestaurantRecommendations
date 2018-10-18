@@ -33,7 +33,9 @@
                 </div>
                 <div class = "personalInfo"> 
                     <h3 onclick = "changeCssPersonal()">Personal Information</h3>
-                    <p class = "details">Name: Jane Doe <br>Country of Origin: United States <br> Member Since: 1776</p>
+                    <p class = "details" id = "nameMain">Name: Jane Doe</p> 
+                    <br><p class = "details" id = "country">Country of Origin: United States</p> <br>
+                    <p class = "details" id = "memberSince">Member Since: 1776</p>
                 </div>
                 <div class = "latestOpinions" id = "reviews">
                     <h3 onclick = "changeCssOpinion()">Latest Opinions</h3>
@@ -64,13 +66,16 @@
             <div class = "content-wrap">  
                 <h2>Personal Information</h2>
                 <div class ="input">
-                    <form action = "" id = "personalInfoForm">
-                        <input type="text" name="firstName" placeholder="First Name" class = "name">
-                        <input type="text" name="lastName" placeholder="Last Name" class = "name">
-                        <input type="text" name="email" placeholder="Email" class = "email">
-                        <input type="text" name="address" placeholder="Address" class = "addressPhone">
-                        <input type="text" name="phone" placeholder="Phone Number" class = "addressPhone">
-                        <input type="text" name="birthday" placeholder="Birthday" class = "birthday">
+                    <form id = "personalInfoForm" >
+                        <input class = "name" name = "username" placeholder = "Username" type = "text" required>
+                        <input class = "name" name = "password" placeholder="Password" type = "password" required>
+                        <input type="text" name="firstName" placeholder="First Name" class = "name" required>
+                        <input type="text" name="lastName" placeholder="Last Name" class = "name" required>
+                        <input type="text" name="email" placeholder="Email" class = "email" required>
+                        <input type="text" name="address" placeholder="Address" class = "addressPhone" required>
+                        <input type="text" name="phoneNumber" placeholder="Phone Number" class = "addressPhone" required>
+                        <input type="date" name="DOB" placeholder="Birthday" class = "birthday" required>
+                        <button type = "button" id = "savePersonal" onclick = "savePersonalForm()" form = "regForm">Save</button>
                     </form>    
                 </div>
                 <h2>My Activity in the App</h2>
@@ -156,20 +161,23 @@
             <form id = "regForm">
                 Username: <input class = "regInput" name = "username" type = "text" required>
                 <br>
-                Password: <input class = "regInput" name = "password" type = password required>
+                Password: <input class = "regInput" name = "password" type = "password" required>
             <h3 class = "regInfo">Personal Information</h3>
-                First Name: <input class = "regInput" form = "regForm" name = "firstName" type = text required>
-                Last Name: <input class = "regInput" form = "regForm" name = "lastName" type = text required>
-                Email: <input class = "regInput" name = "email" form = "regForm" type = email required>
+                First Name: <input class = "regInput" form = "regForm" name = "firstName" type = "text" required>
+                Last Name: <input class = "regInput" form = "regForm" name = "lastName" type = "text" required>
+                Email: <input class = "regInput" name = "email" form = "regForm" type = "email" required>
                 <br>
                 Select a profile picture: <input class = "regInput" type="file" form = "regForm" name="myFile">
-                Address: <input class = "regInput" name = "address" type = address form = "regForm" required>
-                Date of Birth: <input class = "regInput" name = "DOB" type = "date" form = regForm required>
-                Phone Number: <input class = "regInput" name = "phoneNumber" type = "number" form regForm>
+                Address: <input class = "regInput" name = "address" type = "text" form = "regForm" required>
+                <br>
+                Date of Birth: <input class = "regInput" name = "DOB" type = "date" form = "regForm" required>
+                <br>
+                Phone Number: <input class = "regInput" name = "phoneNumber" type = "text" form = "regForm">
                 <br>
                 I have read and accept the terms of use. <input type = "checkbox" form = "regForm" required>
+                <br>
                 <button type = "submit" id = "save" onclick = "saveForm()" form = "regForm">Save</button>
-            <button type = reset id = "delete" form = "regForm">Delete</button>
+            <button type = "reset" id = "delete" form = "regForm">Delete</button>
             </form>
             
         </div>
@@ -218,7 +226,6 @@
             }
         }
         function deleteKeyItem() {
-//            document.getElementById("new").parentElement.style.display = 'none';
             $("#new").parent().click().remove();
         }
         function store() {
@@ -282,26 +289,32 @@
             
         }
         function logInForm() {
+
             var logForm = document.getElementById("logInForm");
             var cookie = getCookie(logForm.username.value);
-            var cookieDecoded = JSON.parse(cookie);
-            console.log(cookieDecoded.username);
+            var cookieDecoded = JSON.parse(cookie);        
             if(cookie == "" || cookie == null){
                 alert("Specified username is not registered");
             }
-            else{
+            else if (cookieDecoded.password == logForm.password.value){
                 document.getElementById("logInContainer").style.display = "none";
-                 document.getElementById("leftBox").style.display = "inline-block";
+                document.getElementById("leftBox").style.display = "inline-block";
                 document.getElementById("personalInfoArticle").style.display = "inline-block";
                 document.getElementById("opinionArticle").style.display = "none";
                 document.getElementById("regMenu").style.display = "none";
                 document.getElementById("logOut").style.display = "block";
-                var x = document.getElementById("personalInfoForm")
-                
+                var x = document.getElementById("personalInfoForm");
+                x.username.value = logForm.username.value;
+                x.password.value = cookieDecoded.password;
                 x.firstName.value = cookieDecoded.firstName;
                 x.lastName.value = cookieDecoded.lastName;
                 x.email.value = cookieDecoded.email;
                 x.address.value = cookieDecoded.address;
+                x.phoneNumber.value = cookieDecoded.phoneNumber;
+                x.DOB.value = cookieDecoded.DOB;
+            }
+            else{
+                alert("Incorrect username/password combination.");
             }
             
         }
@@ -327,17 +340,54 @@
         }
         function saveForm() { 
             var form = document.getElementById('regForm');
-            if (getCookie(form.username.value) == ""){
-                setCookie(form.username.value, JSON.stringify({password:form.password.value, firstName:form.firstName.value,lastName:form.lastName.value,email:form.email.value, address:form.address.value}));
+            if (getCookie(form.username.value) == "") {
+                setCookie(form.username.value, JSON.stringify({password:form.password.value, firstName:form.firstName.value,lastName:form.lastName.value,email:form.email.value, address:form.address.value,DOB:form.DOB.value,phoneNumber:form.phoneNumber.value}));
                 return true;
             }
             else{
-
                 alert("Username already exists");
-
             }
         }
-      
+      function savePersonalForm() { 
+            
+            var form = document.getElementById('personalInfoForm');
+          console.log(form.username.value);
+            if (! form.username.value){
+                alert("Must Complete all fields");
+            }
+            else if(! form.password.value) {
+                alert("Must Complete all fields");
+            }
+            else if(! form.firstName.value) {
+                alert("Must Complete all fields");
+            }
+            else if(! form.lastName.value) {
+                alert("Must Complete all fields");
+            }  
+            else if(! form.email.value) {
+                alert("Must Complete all fields");
+            }
+            else if(! form.address.value) {
+                alert("Must Complete all fields");
+            }
+            else if(! form.email.value) {
+                alert("Must Complete all fields");
+            }
+            else if(! form.DOB.value) {
+                alert("Must Complete all fields");
+            }
+            else if(! form.phoneNumber.value) {
+                alert("Must Complete all fields");
+            }
+            else{
+                setCookie(form.username.value, JSON.stringify({password:form.password.value, firstName:form.firstName.value,lastName:form.lastName.value,email:form.email.value, address:form.address.value,DOB:form.DOB.value,phoneNumber:form.phoneNumber.value}));
+                document.getElementById("aboutMe").innerHTML = form.username.value;
+                document.getElementById("nameMain").innerHTML = "Name: "+ form.firstName.value + " " + form.lastName.value;
+                document.getElementById("country")
+                document.getElementById("memberSince")
+                return true;
+            }
+        }
     
     </script>
 

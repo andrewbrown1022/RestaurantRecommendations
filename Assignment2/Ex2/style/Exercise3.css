@@ -49,6 +49,28 @@
         background: red;
         border-radius: 50px;
     }
+#savePersonal{
+    font-size: 14px;
+        font-weight: 800;
+    padding: 6px 12px;
+    margin: 26px 7px 0 0;
+        margin-top: 25px;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid;
+        background: green;
+        border-radius: 50px;
+}
 #save{
      font-size: 14px;
         font-weight: 800;
