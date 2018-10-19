@@ -9,7 +9,6 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" />
         <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
     </head>
@@ -20,14 +19,18 @@
             <nav>
                 <a onclick = "goHome()" id = "homeButton">Home</a><a onclick = "goToPage()">Reviews</a><a onclick = "goToPage()">About Me</a>
             </nav>
+<!--            Buttons for registration, logout and Login-->
             <button type = "button" id = "registerNav" onclick="register()">Register</button>
             <button type = "button" id = "logInNav" onclick = "login()">Log in</button>
             <button type="button" id="logOut" onclick = "logOut()">Log out</button>
         </header>
+        
+<!--        Contains markup for homepage including search bar and gallery-->
         <div id = "homePageContainer">
             <div id = "searchContainer">
                 <input id = "searchBar" type="text" placeholder="Search.."><button type="submit" id = "searchIcon"><i class="fa fa-search"></i></button>
             </div>
+<!--            Uses jquery plugin to create a lightbox that auto cycles-->
             <div id = "galleryContainer">
                 <a data-fancybox="gallery" href="../images/blur-breakfast-chef-262978.jpg" data-caption = "57th Lounge, Vienna"><img src="../images/pexels-photo-262978.jpeg" alt = "57th Lounge"></a>
                 <a data-fancybox="gallery" href="../images/cafe-chairs-menu-6267.jpg" data-caption = "Mad Hatter's, Durham"><img src="../images/menu-restaurant-vintage-table.jpg" alt = "Mad Hatter's"></a>
@@ -36,10 +39,12 @@
                 <a data-fancybox="gallery" href="../images/alcohol-architecture-bar-260922.jpg" data-caption = "Elmo's, Durham"><img src="../images/pexels-photo-260922.jpeg" alt = "Elmo's"></a>
             </div>
         </div>
+        
 <!--        Creates Mobile Navigation -->
         <div id = "alternativeNav">
             <a href = "Exercise1.html">Home</a><a href = "#reviews">Reviews</a><a href = "#aboutMe">About Me</a>
         </div>
+        
      <!-- Create left vertical box with specified info--> 
         <section id = "leftBox">
 <!--            Wraps content to help with formatting-->
@@ -74,11 +79,13 @@
                 </div>
             </div>
         </section>
+        
 <!--        Creates Menu for Tablet-->
         <div id = "tabletMenu">
             <a href ="Exercise3a.html" title ="link to personal info" class = "tabletAnchor">Personal Information</a><a href = "Exercise2b.html" title = "link to Opinions" class = "tabletAnchor">Latest Opinions</a><a href = "Exercise3a.html" id = "tabletAnchor2">My Preferences</a>
         </div>
-    <!-- Creates right box -->
+        
+    <!-- Creates right box that contains personalInfo, hidden sometimes -->
         <article id = "personalInfoArticle">
             <div class = "content-wrap">  
                 <h2>Personal Information</h2>
@@ -104,6 +111,8 @@
                 </div>
             </div>
         </article>
+       
+        <!-- Creates right box that contains opinions, hidden sometimes -->
         <article id = "opinionArticle">
             <div class = "content-wrap">
                 <h2 class = "opinionHeader">Latest Opinions</h2>
@@ -124,6 +133,8 @@
             </div>
             
         </article>
+        
+<!--        Creates popup on click of opinion-->
         <div class = "opinionModal" id = "foundingFarmersOpinionModal">
             <div class = "modalContainer">
                 <div class = "modalHeadingContainer">
@@ -137,6 +148,8 @@
                 <h4 class = "modalInfo"><b>Opinion:</b> The food was excellent. It came out very fast and the service was great. My only complaint is that I couldn't try every meal. The staff went out of their way to make our visit memorable, we were seated on time and staff went out of their way to ensure the experience level was superb. We truly appreciated the excellent food and top notch service provided by the entire team from the time I made the reservation to my check-in at the hostess desk and our departure. My compliments to the chef and kitchen as the the preparation and presentation food was amazing and the service was beyond compare.</h4>
             </div>
         </div>
+        
+        <!--        Creates popup on click of opinion-->
         <div class = "opinionModal" id = "nomadPizzaOpinionModal">
             <div class = "modalContainer">
                 <div class = "modalHeadingContainer">
@@ -150,6 +163,8 @@
                 <h4 class = "modalInfo"><b>Opinion:</b> Who put this quaint authentic Italian pizzeria in the middle of bustling NYC? 10/10 would recommend. Our order was taken immediately. We ordered the fall pumpkin seed salad and a large pie. The Trenton tomato pie is definitely not the same as Consohocken tomato pie but is very good. Thin crust, heavy sauce and light cheese. We did not get the citrus dressing on our salad. Good call because the apples tasted like they had been soaked in it and they were bitter. The fresh mozzarella in the salad, so good! Melted in your mouth! I should have gotten that on my pizza!</h4>
             </div>
         </div>
+        
+                <!--        Creates popup on click of opinion-->
         <div class = "opinionModal" id = "oishiOpinionModal">
             <div class = "modalContainer">
                 <div class = "modalHeadingContainer">
@@ -163,16 +178,21 @@
                 <h4 class = "modalInfo"><b>Opinion:</b> Only go here if you have no other option. The food came out cold, the waiter was rude and we caught him spitting in our food, and their roof was leaking right over our table. AVOID AT ALL COSTS!</h4>
             </div>
         </div>
+        
 <!--        Creates Mobile Nav at bottom of page-->
         <div class = "mobileNav">
             <ul class = "mobileList">
                 <li><i class = "fa fa-user"></i><br><a href ="Exercise3a.html" title ="link to personal info" class = "mobileAnchor">Personal </a></li><li><i class = "fa fa-comment"></i><br><a href = "Exercise2b.html" title = "link to Opinions" class = "mobileAnchor">Opinions</a></li><li><i class = "fa fa-heart"></i><br><a href = "Exercise3a.html" class = "mobileAnchor">Preferences</a></li>
             </ul>
         </div>
+        
+<!--        Allows users to navigate to log in and registartion options-->
         <div id = "regMenu">
             <button type = "button" id = "register" onclick="register()">Register</button>
             <button type = "button" id = "logIn" onclick = "login()">Log in</button>
         </div>
+        
+<!--        Creates a registration form to store account info into a cookie-->
         <div id = "regFormContainer">
             <h3 class = "regInfo">Account Information</h3>
             <form id = "regForm">
@@ -198,6 +218,8 @@
             </form>
             
         </div>
+        
+<!--        Allows user to login using existing account info-->
         <div id = "logInContainer">
                 <h1>Login</h1>
                 <form id = "logInForm">
@@ -213,17 +235,22 @@
             <a href = "https://www.facebook.com/" title = "Facebook" target = "_blank" class = "borderRight">Facebook</a>
             <a href = "https://www.instagram.com/" title = "Instagram" target = "_blank">Instagram</a>
         </footer>
+        
     <script>
+        // On click changes right box to personal info
         var click = 0;
         function changeCssPersonal() {
             document.getElementById("opinionArticle").style.display = "none";
             document.getElementById("personalInfoArticle").style.display = "inline-block";
         }
+        
+        // On click changes right box to opinion info
         function changeCssOpinion() {
             document.getElementById("personalInfoArticle").style.display = "none";
             document.getElementById("opinionArticle").style.display = "inline-block";
         }
         
+        //Adds a keyword to section
         function addKeyword() {
             console.log(click);
            
@@ -240,9 +267,13 @@
                 document.getElementById("prefList").appendChild(listItem);
             }
         }
+        
+        //Implements delete functionality of keyword
         function deleteKeyItem() {
             $("#new").parent().click().remove();
         }
+        
+        //Stores keyword in sessionStorage to save data for browsing session
         function store() {
             var inputStorage = document.getElementById("prefListInput");
             sessionStorage.setItem("keyword", inputStorage.value);
@@ -255,24 +286,38 @@
                sessionStorage.clear();
             }
         }
+        
+        //Opens popup
         function openFoundingModal() {
             document.getElementById("foundingFarmersOpinionModal").style.display = "block";
         }
+        
+        //Closes popup
         function closeFoundingModal() { 
             document.getElementById("foundingFarmersOpinionModal").style.display = "none";
         }
+        
+        //Opens popup
         function openNomadModal() {
             document.getElementById("nomadPizzaOpinionModal").style.display = "block";
         }
+        
+        //closes popup
         function closeNomadModal() { 
             document.getElementById("nomadPizzaOpinionModal").style.display = "none";
         }
+        
+        //opens popup
         function openOishiModal() {
             document.getElementById("oishiOpinionModal").style.display = "block";
         }
+        
+        //closes popup
         function closeOishiModal() { 
             document.getElementById("oishiOpinionModal").style.display = "none";
         }
+        
+        //closes modals on click outside of popup box
         var foundingFarmersModal = document.getElementById("foundingFarmersOpinionModal");
         var nomadModal = document.getElementById("nomadPizzaOpinionModal");
         var oishiModal = document.getElementById("oishiOpinionModal");
@@ -287,6 +332,8 @@
                 oishiModal.style.display = "none";
             }
         }
+        
+        //logs user out
         function logOut() {
             document.getElementById("leftBox").style.display = "none";
             document.getElementById("personalInfoArticle").style.display = "none";
@@ -295,12 +342,16 @@
             document.getElementById("logOut").style.display = "none";
             
         }
+        
+        //Sends user to registration form
         function register() {
             document.getElementById("regMenu").style.display = "none";
             document.getElementById("regFormContainer").style.display = "block";
             $("#homePageContainer").hide();
             $("#logInContainer").hide();
         }
+        
+        //Sends user to login form
         function login() {
             document.getElementById("regMenu").style.display = "none";            document.getElementById("logInContainer").style.display = "block";
              document.getElementById("logInForm").style.display = "block";
@@ -313,6 +364,8 @@
             $("#opinionArticle").hide();
 
         }
+        
+        //Implements logIn Form functionality
         function logInForm() {
 //            $("#logOut").hide();
             var logForm = document.getElementById("logInForm");
@@ -351,11 +404,15 @@
 
             
         }
+        
+        //Sets a cookie with expiration
         var today = new Date();
         var expiry = new Date(today.getTime() + 30 * 24 * 3600 * 1000); 
         function setCookie(name, value) {
             document.cookie=name + "=" + escape(value) + "; path=/; expires=" + expiry.toGMTString();
         }
+        
+        //Retrieves a cookie based on parameter
         function getCookie(cname) {
             var name = cname + "=";
             var decodedCookie = decodeURIComponent(document.cookie);
@@ -371,6 +428,8 @@
             }
             return "";
         }
+        
+        //Saves the registration form info in cookie
         function saveForm() { 
             var form = document.getElementById('regForm');
             if (getCookie(form.username.value) == "") {
@@ -381,8 +440,9 @@
                 alert("Username already exists");
             }
         }
+        
+        //Allows user to edit cookie from personal info section after login
         function savePersonalForm() { 
-            
             var form = document.getElementById('personalInfoForm');
           console.log(form.username.value);
             if (! form.username.value){
@@ -419,6 +479,8 @@
                 return true;
             }
         }
+        
+        //Goes to home page
         function goHome() {
             $("#leftBox").hide();
             $("#personalInfoArticle").hide();
@@ -430,6 +492,8 @@
             $("#logInNav").show();
             $("#logOut").hide();
         }
+        
+        //Goes to main page
         function goToPage() {
 //            $("#leftBox").show();
            document.getElementById("leftBox").style.display = "inline-block"; document.getElementById("personalInfoArticle").style.display = "inline-block";
@@ -442,11 +506,9 @@
             $("#logInContainer").hide();
             $("#regFormContainer").hide();
         }
+        
+        //MAkes lightbox autoscroll
         $.fancybox.defaults.slideShow.autoStart = true;
     </script>    
     </body>
-    
-    
-    
-
 </html>

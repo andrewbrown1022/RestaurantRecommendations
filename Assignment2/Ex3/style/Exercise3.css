@@ -1,35 +1,38 @@
 /*For mobile which is base style*/
-    #tabletMenu{
-            display: none;
-        }
-    html, body{
-            margin: 0;
-            padding: 0;
-            height: 100%;
-        }
-
-    *{
-            box-sizing: border-box;
-        }
-    #opinionArticle{
+#tabletMenu{
         display: none;
     }
 
-    body{
-            background-color: aliceblue;
-            font-family: sans-serif;
-            margin:0;
-            position: relative;
-        }
+html, body{
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+
+*{
+        box-sizing: border-box;
+    }
+
+#opinionArticle{
+    display: none;
+}
+
+body{
+        background-color: aliceblue;
+        font-family: sans-serif;
+        margin:0;
+        position: relative;
+    }
+
 #personalInfoArticle{
     display: none;
 }
+
 #homePageContainer{
     display: block;
     padding: 1%;
     text-align: center;
 }
-
 
 #searchBar{
     padding: 6px;
@@ -38,6 +41,7 @@
     margin-right:0;
     font-size: 17px;
 }
+
 #searchIcon{
   padding: 6px 10px;
   margin-top: 8px;
@@ -49,18 +53,21 @@
 border: 2px black solid;
     border-left: 0;
 }
+
 #logInContainer{
     min-height: 86%;
     display: none;
         text-align: center;
 }
+
 #searchContainer{
     text-align: center;
     padding: 1%;
     margin: 1%;
     
 }
-    #logOut{
+
+#logOut{
         font-size: 14px;
         font-weight: 800;
     padding: 6px 12px;
@@ -84,9 +91,11 @@ border: 2px black solid;
         border-radius: 50px;
         display: none;
     }
+
 #personalInfoForm{
     overflow:hidden;
 }
+
 #savePersonal{
     font-size: 14px;
         font-weight: 800;
@@ -110,6 +119,7 @@ border: 2px black solid;
         background: green;
         border-radius: 50px;
 }
+
 #save{
      font-size: 14px;
         font-weight: 800;
@@ -132,6 +142,7 @@ border: 2px black solid;
         background: green;
         border-radius: 50px;
 }
+
 #delete{
      font-size: 14px;
         font-weight: 800;
@@ -154,30 +165,36 @@ border: 2px black solid;
         background: red;
         border-radius: 50px;
 }
-    #regMenu{
-        min-height: 86%;
-        text-align: center;
-        display: none;
-    }
-    #regFormContainer{
-        min-height: 86%;
-        display: none;
-        text-align: center;
 
-    }
+#regMenu{
+    min-height: 86%;
+    text-align: center;
+    display: none;
+}
+
+#regFormContainer{
+    min-height: 86%;
+    display: none;
+    text-align: center;
+
+}
+
 #regForm{
     padding: 1%;
     margin: 0;
 }
+
 .regInfo{
     margin: 0;
     padding: 1%;
 }
+
 .regInput{
     margin: 1%;
     padding: .5%;
 }
-    #register{
+
+#register{
         top: 50%;
         font-size: 40px;
         font-weight: 800;
@@ -199,6 +216,7 @@ border: 2px black solid;
         background: green;
         border-radius: 50px;
     }
+
 #logIn{
     font-size: 40px;
         font-weight: 800;
@@ -220,6 +238,7 @@ border: 2px black solid;
         background:#1a1aff;
         border-radius: 50px;
 }
+
 #logInNav{
     font-size: 12px;
         font-weight: 800;
@@ -242,6 +261,7 @@ border: 2px black solid;
     background:#1a1aff;
     border-radius: 50px;
 }
+
 #registerNav{
         position: absolute;
         bottom: 10px;
@@ -266,6 +286,7 @@ border: 2px black solid;
         background: green;
         border-radius: 50px;
 }
+
 #logInFormButton{
     display: block;
     font-size: 14px;
@@ -288,140 +309,168 @@ border: 2px black solid;
         background:green;
         border-radius: 50px;
 }
-    header{
-            background-color:#cccccc;
-            color: white;
-            overflow: hidden;
-            position: relative;
-        }
-    header h1{
-            position: relative;
-            display: inline-block;
-            padding: 0;
-            font-size: 3.5em; 
-            font-family: monospace;
-            margin: 1%;
 
-
-        }
-    #prefListInput{
-        margin: 0%;
-        font-size: 110%;
-        margin-right: 10px;
-        width: 100px;
-        padding: .25%;
+header{
+        background-color:#cccccc;
+        color: white;
+        overflow: hidden;
+        position: relative;
     }
-    nav{
-            display:none;
-        }
-    .details {
-            display:none;
-        }
-    .personalInfo{
-            display: none;
-        }
-    .latestOpinions{
-            display: none;
-        }
-    .preferences{
-            display: none;
-        }
-    .user{
-            overflow:hidden;
-            margin-top: 30px;  
-            padding-left: 5%;
-            padding-top: 5%;
-            font-size: 200%;
-        }
-    .userphoto{
-            float:left;
-            width: 30%;
-            margin: 2%;
-            border-radius: 50%;
-        }
-    .profileNameAndImage{
-            overflow:auto;
 
-        }
-    article{
-            border-radius: 2%;
-            border:solid;
-            width: 97%;
-            margin: auto;
-            background-color: white;
-            /* Makes boxes same size */
-        }
-    footer{
-            display: none;
-        }
-    footer a{
-            display: none;
-            text-decoration: none;
-            color: black;
-        }
-    .content-wrap{
-            padding: 5%;
-        }
-    article h2{
-            padding: 2%;
-            margin: 0;
-        }
-    form{
-            padding: 2%;
-        }
-    input {
-            display: inline-block;
-            padding: 1%;
-            margin: 1%;
-        }
-    .name{
-            width: 47%;
-        }
-    .email{
-            width: 96.6%;
-        }
-    .addressPhone{
-            width: 47%;
-        }
-    .birthday{
-            width: 96.6%;
-        }
-    .iconList{
-            width: 100%;
-            margin: 0 auto;
-        }
-    .iconList li{
-            list-style: none;
-            display: inline-block;
-            text-align: center;
-            width: 45%;
-            border: solid 2px black;
-            padding: 2%;
-            border-radius: 50%;
-            margin: 2%;
+header h1{
+        position: relative;
+        display: inline-block;
+        padding: 0;
+        font-size: 3.5em; 
+        font-family: monospace;
+        margin: 1%;
 
-        }
-    .mobileNav{
-            background-color:#cccccc;
-            width: 100%;
-            position: fixed;
-            bottom: 0;
-        }
-    .mobileList li{
-            text-align: center;
-            display: inline-block;
-            text-decoration: none;
-            width: 33.3%;
-            padding: 1%;
-            margin: 0;
-        }
-    .mobileAnchor{
-           text-decoration: none;
-            color: black;
-        }
-    #alternativeNav{
-            display: none;
-        }
+
+    }
+
+#prefListInput{
+    margin: 0%;
+    font-size: 110%;
+    margin-right: 10px;
+    width: 100px;
+    padding: .25%;
+}
+
+nav{
+        display:none;
+    }
+
+.details {
+        display:none;
+    }
+
+.personalInfo{
+        display: none;
+    }
+
+.latestOpinions{
+        display: none;
+    }
+
+.preferences{
+        display: none;
+    }
+
+.user{
+        overflow:hidden;
+        margin-top: 30px;  
+        padding-left: 5%;
+        padding-top: 5%;
+        font-size: 200%;
+    }
+
+.userphoto{
+        float:left;
+        width: 30%;
+        margin: 2%;
+        border-radius: 50%;
+    }
+
+.profileNameAndImage{
+        overflow:auto;
+
+    }
+
+article{
+        border-radius: 2%;
+        border:solid;
+        width: 97%;
+        margin: auto;
+        background-color: white;
+        /* Makes boxes same size */
+    }
+
+footer{
+        display: none;
+    }
+
+footer a{
+        display: none;
+        text-decoration: none;
+        color: black;
+    }
+
+.content-wrap{
+        padding: 5%;
+    }
+
+article h2{
+        padding: 2%;
+        margin: 0;
+    }
+
+form{
+        padding: 2%;
+    }
+
+input {
+        display: inline-block;
+        padding: 1%;
+        margin: 1%;
+    }
+
+.name{
+        width: 47%;
+    }
+
+.email{
+        width: 96.6%;
+    }
+
+.addressPhone{
+        width: 47%;
+    }
+
+.birthday{
+        width: 96.6%;
+    }
+
+.iconList{
+        width: 100%;
+        margin: 0 auto;
+    }
+
+.iconList li{
+        list-style: none;
+        display: inline-block;
+        text-align: center;
+        width: 45%;
+        border: solid 2px black;
+        padding: 2%;
+        border-radius: 50%;
+        margin: 2%;
+
+    }
+
+.mobileNav{
+        background-color:#cccccc;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+    }
+
+.mobileList li{
+        text-align: center;
+        display: inline-block;
+        text-decoration: none;
+        width: 33.3%;
+        padding: 1%;
+        margin: 0;
+    }
+
+.mobileAnchor{
+       text-decoration: none;
+        color: black;
+    }
+
+#alternativeNav{
+        display: none;
+    }
 
 /*For tablet*/
 @media only screen and (min-width: 600px) {
